@@ -36,7 +36,7 @@
 
                                     </div>
                                     <div class="widget-fluctuation-description-text am-text-right">
-                                         416049355
+                                         312924860
                                     </div>
                                 </div>
                             </div>
@@ -88,11 +88,11 @@
                             </div>
                             <img class="achievement-image" src="<?php echo base_url('/static/admin/img/logoa.png')?>" alt="">
                             <div class="achievement-description">
-                                开发者:</b>Cryin<br/>
-                                贡献者:</b>LUHOO、Hardy、Ant、半城人<br/>
-                                捐赠者:</b>Hardy、格格<br/></div>
+                                开发者:</b>PENGPN<br/>
+                                贡献者:</b>PENGPN<br/>
+                                捐赠者:</b>PENGPN<br/></div>
                     <p class="copyright">
-                        © 2014-2016 Cryin' | Images : cryin.startblog.cc<a href="http://cryin.startblog.cc/"></a>
+                        © 2016-2017 Cryin' | Images : cryin.startblog.cc<a href="http://cryin.startblog.cc/"></a>
                     </p>
                             
                         </div>
