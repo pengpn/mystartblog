@@ -28,7 +28,7 @@ class Index extends CI_Controller{
         $username = trim($this->input->post('username'));
         $password = trim($this->input->post('password'));
         $this->user_info = $this->User_model->checkUserByUsername($username);
-        var_dump($this->user_info);
+
         $this->form_validation->set_rules('username','Username','trim|callback_username_check');
         $this->form_validation->set_rules('password','Password','trim|callback_password_check');
         if($this->form_validation->run() == false){
@@ -44,7 +44,7 @@ class Index extends CI_Controller{
     }
 
     public function logout(){
-        $this->session->session_destroy();
+        $this->session->sess_destroy();
         redirect('admin/Index/login');
     }
 
