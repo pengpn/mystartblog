@@ -23,6 +23,6 @@ class Tag_model extends CI_Model
 
     public function addTag($tag_name,$tag_type)
     {
-        $this->db->insert('tag',array('tag_name'=>$tag_name,'tag_buttom_type'=>$tag_type));
+        $this->db->insert('tag',array('tag_name'=>$tag_name,'tag_button_type'=>$tag_type));
     }
 }

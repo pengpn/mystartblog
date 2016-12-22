@@ -97,7 +97,7 @@ class Articles extends CI_Controller
         foreach ($tag_arr as $key => $value) {
             if (!in_array($value,$all_tags_name)) {
                 $color = array_rand($random_color);
-                $this->tag_model->addTag($value, $color);
+                $this->tag_model->addTag($value, $random_color[$color]);
             }
         }
 
