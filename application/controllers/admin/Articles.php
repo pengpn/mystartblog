@@ -41,6 +41,18 @@ class Articles extends CI_Controller
 
     }
 
+    public function add()
+    {
+        $data['cur_title'] = array('','','active','','','','');
+        $data['all_category'] =  $this->category_model->getAllCategory();
+
+        $this->load->view('admin/header');
+        $this->load->view('admin/menu', $data);
+        $this->load->view('admin/articles_add', $data);
+        $this->load->view('admin/footer');
+
+    }
+
     public function edit($id=0)
     {
         $data['cur_title'] = array('','','active','','','','');
@@ -132,6 +144,14 @@ class Articles extends CI_Controller
 
         redirect('admin/Articles/index');
     }
+
+    public function delete($id)
+    {
+        $data['cur_title'] = array('','active','','','');
+        $this->articles_model->delArticles($id);
+        redirect('admin/Articles/index');
+    }
+
     private function getPaginationConfig()
     {
 
