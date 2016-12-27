@@ -6,7 +6,7 @@
  * Time: 11:32
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Others extends CI_Controller{
+class Others extends MY_Controller{
     public function __construct(){
         parent::__construct();
         $this->load->model('Siteinfo_model');

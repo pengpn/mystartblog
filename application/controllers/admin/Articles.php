@@ -6,7 +6,7 @@
  * Time: 11:27
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Articles extends CI_Controller
+class Articles extends MY_Controller
 {
     const PER_PAGE = 5;
     const NUM_LINKS = 3;

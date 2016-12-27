@@ -7,7 +7,7 @@
  */
 
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Category extends CI_Controller
+class Category extends MY_Controller
 {
     const PER_PAGE = 5;
     const NUM_LINKS = 3;
