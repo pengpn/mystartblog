@@ -8,7 +8,7 @@
                     </div>
                     <span class="user-panel-logged-in-text">
               <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
-              Cryin
+              PengPn
           </span>
                     <?php echo anchor('admin/Others/change_password','<span class="am-icon-pencil"></span> 账号设置','class="tpl-user-panel-action-link"')?>
                 </div>

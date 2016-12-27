@@ -92,7 +92,7 @@
                                 贡献者:</b>PENGPN<br/>
                                 捐赠者:</b>PENGPN<br/></div>
                     <p class="copyright">
-                        © 2016-2017 Cryin' | Images : cryin.startblog.cc<a href="http://cryin.startblog.cc/"></a>
+                        © 2016-2017 PENGPN' | Images : PENGPN.startblog.cc<a href="http://pengpn.startblog.cc/"></a>
                     </p>
                             
                         </div>
