@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>StartBlog Admin</title>
     <meta name="generator" content="startblog v1.5" />
-    <meta name="author" content="https://github.com/cryin/startblog" />
+    <meta name="author" content="https://github.com/pengpn/mystartblog" />
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">

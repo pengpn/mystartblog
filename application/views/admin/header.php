@@ -50,7 +50,7 @@
                     <ul>
                         <!-- 欢迎语 -->
                         <li class="am-text-sm tpl-header-navbar-welcome">
-                            <a href="https://github.com/Cryin/Startblog"><span class="am-icon-github"></span> </a>
+                            <a href="https://github.com/pengpn/mystartblog"><span class="am-icon-github"></span> </a>
                         </li>
                         <!-- 退出 -->
                         <li class="am-text-sm">

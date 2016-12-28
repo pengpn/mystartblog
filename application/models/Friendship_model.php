@@ -12,7 +12,17 @@ class Friendship_model extends CI_Model
 
     public function getAllFriend()
     {
-
+        $query = $this->db->order_by('link_order','desc')
+                 ->get('friendship');
+        $data_temp = $query->result_array();
+        foreach ($data_temp as $value) {
+            $friendship_id = $value['id'];
+            $data[$friendship_id]['id'] = $value['id'];
+            $data[$friendship_id]['link'] = $value['link'];
+            $data[$friendship_id]['link_name'] = $value['link_name'];
+            $data[$friendship_id]['link_order'] = $value['link_order'];
+        }
+        return $data;
     }
 
     public function getFriendshipDuring($offset,$row){
