@@ -149,6 +149,16 @@ class Others extends MY_Controller
         $this->load->view('admin/footer');
     }
 
+    public function feedback()
+    {
+
+        $data['cur_title'] = array('','','','','','','active');
+        $this->load->view('admin/header');
+        $this->load->view('admin/menu', $data);
+        $this->load->view('admin/others_feedback');
+        $this->load->view('admin/footer');
+    }
+
     private function getPaginationConfig()
     {
 
