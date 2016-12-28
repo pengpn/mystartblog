@@ -33,4 +33,13 @@ class Articles_model extends CI_Model
         $data = $this->db->query($sql)->result_array();
         return $data;
     }
+
+    public function getAllArticles()
+    {
+        $query = $this->db->get('articles');
+        foreach ($query->result_array() as $row) {
+            $data[] = $row;
+        }
+        return $data;
+    }
 }
