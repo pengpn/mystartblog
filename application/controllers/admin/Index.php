@@ -23,14 +23,24 @@ class Index extends MY_Controller{
         $this->load->view('admin/footer');
     }
 
+    public function getCode()
+    {
+        $this->load->library('mycaptcha');
+        $code = $this->mycaptcha->getCaptcha();
+        $this->session->set_userdata('code',$code);
+        $this->mycaptcha->showImg();
+    }
+
     public function login(){
         $this->load->library('form_validation');
         $username = trim($this->input->post('username'));
         $password = trim($this->input->post('password'));
+        $captcha = strtolower(trim($this->input->post('captcha')));
         $this->user_info = $this->User_model->checkUserByUsername($username);
 
         $this->form_validation->set_rules('username','Username','trim|callback_username_check');
         $this->form_validation->set_rules('password','Password','trim|callback_password_check');
+        $this->form_validation->set_rules('captcha','Captcha','trim|callback_captcha_check');
         if($this->form_validation->run() == false){
             $this->load->view('admin/index_login');
         }else{
@@ -75,5 +85,14 @@ class Index extends MY_Controller{
         {
             return TRUE;
         }
+    }
+
+    public function captcha_check($str){
+        $code = strtolower($this->session->userdata('code'));
+        if($code != strtolower($str)){
+            $this->form_validation->set_message('captcha_check','验证码错误');
+            return false;
+        }
+        return true;
     }
 }

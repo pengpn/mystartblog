@@ -55,6 +55,10 @@
                         <input type="password" class="tpl-form-input" id="password" name="password" value="<?php echo set_value('password'); ?>" placeholder="请输入密码">
                         <label class="am-form-label" for="doc-ipt-error"><?php echo form_error('password'); ?></label>
                     </div>
+                    <div class="am-form-group">
+                        <input type="password" class="tpl-form-input" id="captcha" name="captcha" value="" placeholder="请输入验证码">
+                        <label class="am-form-label" for="doc-ipt-error"><?php echo form_error('captcha'); ?></label>
+                    </div>
                     <div class="am-form-group tpl-login-remember-me">
                         <input id="remember-me" type="checkbox">
                         <label for="remember-me">
@@ -63,7 +67,7 @@
                          </label>
 
                     </div>
-
+                    <img src="<?php echo site_url('admin/Index/getCode') ?>" id="captcha_c" style="cursor: pointer;" />
                     <div class="am-form-group">
 
                         <button type="submit" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn" name='subimit' value="subimit">提交</button>
@@ -77,7 +81,15 @@
     </div>
     <script src="<?php echo base_url('/static/admin/js/amazeui.min.js')?>"></script>
     <script src="<?php echo base_url('/static/admin/js/app.js')?>"></script>
+    <script>
+        $(function(){
+            $("#captcha_c").click(function(){
+                var src_string = "<?php echo site_url('admin/Index/getCode');?>"+"?"+Math.random();
+                $(this).attr("src",src_string);
+            });
+        });
 
+    </script>
 </body>
 
 </html>
