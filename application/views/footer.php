@@ -15,7 +15,7 @@
                 <a href="<?php echo base_url('/feed')?>"><span class="am-icon-rss am-icon-fw blog-icon blog-icon"></span></a>
             </p>
             <h3>贡献者</h3>
-            <p>感谢辉哥设计的Logo，感谢贡献者LUHOO、Hardy、Ant、半城人...</p>          
+            <p>感谢自己...</p>
         </div>
         <div class="am-u-sm-12 am-u-md-4- am-u-lg-4">
               <h1>站在巨人的肩膀上</h1>
@@ -30,7 +30,7 @@
             </p>
         </div>
     </div>    
-    <div class="blog-text-center">©2016- 2017 Cryin' | Images: <a href="https://github.com/pengpn/mystartblog">Startblog</a>
+    <div class="blog-text-center">©2016- 2017 PENGPN' | Images: <a href="https://github.com/pengpn/mystartblog">Startblog</a>
       <script language="javascript" type="text/javascript" src="http://js.users.51.la/19034341.js"></script>
 <noscript><a href="http://www.51.la/?19034341" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/19034341.asp" style="border:none" /></a></noscript>
     </div>    

@@ -18,9 +18,9 @@ $html = $Parsedown->text($about[0]['content']);
         <div class="am-article-hd">
           <h1 class="am-article-title blog-text-center"><?php echo $about[0]['title'];?></h1>
           <p class="am-article-meta blog-text-center">
-              <span><a href="#" class="blog-color">Cryin' &nbsp;</a></span>-
-              <span><a href="#">@Startblog.cc &nbsp;</a></span>-
-              <span><a href="#">2014/10/9</a></span>
+              <span><a href="#" class="blog-color">PENGPN' &nbsp;</a></span>-
+              <span><a href="#">@pengpn.cc &nbsp;</a></span>-
+              <span><a href="#">2016/12/28</a></span>
           </p>
         </div>        
         <div class="am-article-bd">
