@@ -38,4 +38,17 @@ class Category_model extends CI_Model{
         $this->db->where('id',$id);
         $this->db->delete('category');
     }
+
+    public function getAllArticles($category_id)
+    {
+        $sql="select * from articles where category={$category_id}";
+        $data = $this->db->query($sql)->result_array();
+        return $data;
+    }
+
+    public function getCategory($category_id){
+        $sql="select * from category where id={$category_id}";
+        $data =$this->db->query($sql)->result_array();
+        return $data;
+    }
 }

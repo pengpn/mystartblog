@@ -48,6 +48,86 @@ class Articles extends CI_Controller
         $this->load->view('footer',$data);
     }
 
+    public function article($id)
+    {
+        //统计文章访问数
+        $user_ip_name = 'user_ip_'.$id;
+        if (empty($_SESSION[$user_ip_name])) {
+            $this->db->set('pv','pv+1',false);
+            $this->db->where('id',$id);
+            $this->db->update('articles');
+            $user_ip = $_SERVER['REMOTE_ADDR'];
+            $user_ip = array($user_ip_name => $user_ip);
+            $this->session->set_userdata($user_ip);
+        }
+
+        $this->load->model('articles_model');
+        $data_tmp['articles'] = $this->articles_model->getArticle($id);
+        $tag_info = $this->articles_model->getTagsType();
+        foreach ($data_tmp as $key => $value) {
+            foreach ($value as $value1) {
+                $data['article']['0']['id'] = $value1['id'];
+                $data['article']['0']['title'] = $value1['title'];
+                $data['article']['0']['keyword'] = $value1['keyword'];
+                $data['article']['0']['description'] = $value1['description'];
+
+                $data['article']['0']['content'] = $value1['content'];
+                $data['article']['0']['category'] = $value1['category'];
+                $data['article']['0']['pv'] = $value1['pv'];
+
+                if ($value1['tag'] != ''){
+                    $tag_str = explode(',', $value1['tag']);
+                    $tag_str = implode("','", $tag_str);
+                    $tag_str = "('".$tag_str."')";
+                    $sql="select id, tag_name from tag where tag_name in {$tag_str}";
+                    $tag_arr = $this->db->query($sql)->result_array();
+                    foreach ($tag_arr as $key => $value) {
+                        $data['article']['0']['tag'][$value['id']]= $value['tag_name'];
+                    }
+                }
+
+                $data['article']['0']['published_at'] = $value1['published_at'];
+
+            }
+        }
+
+        foreach ($tag_info['button_type'] as $value) {
+            $tag_name = $value['tag_name'];
+            $button_type[$tag_name] = $value['tag_button_type'];
+        }
+
+        $data['button_type'] = $button_type;
+        $this->load->model('category_model');
+        $data['all_category'] =  $this->category_model->getAllCategory();
+        //当前标题（首页，分类，标签，关于我）
+        $data['cur_title'] = array('','am-active','','');
+
+        $this->load->model('siteinfo_model');
+        $data['siteinfo']= $this->siteinfo_model->getSiteInfo();
+
+        $this->load->view('articles_header',$data);
+        $this->load->view('menu',$data);
+        $this->load->view('articles_article', $data);
+        $this->load->view('footer',$data);
+    }
+
+    public function timeline()
+    {
+
+        $data['cur_title'] = array('','','am-active','');
+
+        $this->load->model('category_model');
+        $data['all_category'] =  $this->category_model->getAllCategory();
+
+
+        $this->load->model('siteinfo_model');
+        $data['siteinfo']= $this->siteinfo_model->getSiteInfo();
+        $this->load->view('header',$data);
+        $this->load->view('menu',$data);
+        $this->load->view('timeline');
+
+        $this->load->view('footer',$data);
+    }
 
     private function getPaginationConfig()
     {
@@ -74,4 +154,6 @@ class Articles extends CI_Controller
         $config['next_tag_close'] = '</li>';
         return $config;
     }
+
+
 }

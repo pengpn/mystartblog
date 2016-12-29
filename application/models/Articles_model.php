@@ -42,4 +42,11 @@ class Articles_model extends CI_Model
         }
         return $data;
     }
+
+    public function getTagsType()
+    {
+        $sql="select * from tag";
+        $data['button_type'] = $this->db->query($sql)->result_array();
+        return $data;
+    }
 }
