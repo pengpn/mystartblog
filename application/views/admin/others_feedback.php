@@ -31,7 +31,7 @@
                                 反馈QQ: </b>312924860<br/>
                                 </div>
                     <p class="copyright">
-                        © 2016-2017 PENGPN' | Images : cryin.startblog.cc<a href="http://cryin.startblog.cc/"></a>
+                        © 2016-2017 PENGPN' | Images : cryin.startblog.cc<a href="#"></a>
                     </p>
                             
                         </div>
